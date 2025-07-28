@@ -1,7 +1,7 @@
 ##############################
 # Stage 1 – builder
 ##############################
-FROM node:18-alpine AS builder
+FROM public.ecr.aws/docker/library/node:18-alpine AS builder
 WORKDIR /app
 
 # install deps
@@ -15,7 +15,7 @@ RUN npm run build          # -> creates /app/dist
 ##############################
 # Stage 2 – runtime
 ##############################
-FROM node:18-alpine
+FROM public.ecr.aws/docker/library/node:18-alpine AS builder
 WORKDIR /app
 
 # copy only what we actually need
