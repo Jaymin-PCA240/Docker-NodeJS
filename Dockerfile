@@ -15,7 +15,7 @@ RUN npm run build          # -> creates /app/dist
 ##############################
 # Stage 2 – runtime
 ##############################
-FROM public.ecr.aws/docker/library/node:18-alpine AS builder
+FROM public.ecr.aws/docker/library/node:18-alpine
 WORKDIR /app
 
 # copy only what we actually need
